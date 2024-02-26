@@ -1,0 +1,18 @@
+.button {
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background: rgba(0,0,0, 1);
+  color: ghostwhite;
+  font-size: 1.5rem;
+  display: block;
+  width: 100%;
+  transition: opacity 0.2s ease;
+
+  &:disabled {
+    background: rgba(0,0,0, 0.3);
+    cursor: not-allowed;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+}
