@@ -1,6 +1,6 @@
 import { FC, memo, useMemo } from "react";
 import { DataForm } from "../data-form/data-form.tsx";
-import { EDataForm, IDataForm } from "../../models.ts/dataForm.ts";
+import { EDataForm, IDataForm } from "../../models/dataForm.ts";
 
 interface Props {}
 
@@ -14,17 +14,20 @@ export const FormControl: FC<Props> = memo(() => {
         options: [{ label: " ", value: " " }],
         isSuggesting: true,
         textholder: "Иванов Ваня Иванов",
+        required: true,
       },
       {
         key: "birthday",
         type: EDataForm.DATE,
         placeholder: "День рождения",
         textholder: "15.04.2005",
+        required: true,
       },
       {
         key: "phoneNumber",
         type: EDataForm.PHONE,
         placeholder: "Номер телефона",
+        required: true,
       },
       {
         key: "gender",
@@ -42,6 +45,7 @@ export const FormControl: FC<Props> = memo(() => {
           { label: "ОМС", value: "ОМС" },
           { label: "ДМС", value: "ДМС" },
         ],
+        required: true,
       },
       {
         key: "currentDoctor",

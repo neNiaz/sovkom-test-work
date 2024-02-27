@@ -1,5 +1,5 @@
 import { FC, useMemo, useState } from "react";
-import { IDataForm } from "../../models.ts/dataForm.ts";
+import { IDataForm } from "../../models/dataForm.ts";
 import { DataFormControl } from "../data-form-cotrol/data-form-control.tsx";
 import Button from "../button/button.tsx";
 import { Form, Formik } from "formik";

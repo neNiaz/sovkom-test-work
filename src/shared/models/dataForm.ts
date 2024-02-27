@@ -14,4 +14,5 @@ export interface IDataForm {
   textholder?: string;
   options?: Record<string, string>[];
   isSuggesting?: boolean;
+  required?: boolean;
 }

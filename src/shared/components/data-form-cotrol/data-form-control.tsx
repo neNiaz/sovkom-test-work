@@ -1,4 +1,4 @@
-import { EDataForm, IDataForm } from "../../models.ts/dataForm.ts";
+import { EDataForm, IDataForm } from "../../models/dataForm.ts";
 import { FC, memo, useMemo, useState } from "react";
 import { ErrorMessage, Field, FormikProps } from "formik";
 import styles from "../data-form/data-form.module.scss";
@@ -20,6 +20,7 @@ export const DataFormControl: FC<Props> = memo(({ row, form }) => {
     return !!form.touched[row.key] && !!form.errors[row.key];
   }, [form.errors, form.touched, row.key]);
 
+  console.log("row.required", row.key, !!row.required);
   return (
     <div className={styles.container_wrapper}>
       <ErrorMessage
@@ -53,7 +54,7 @@ export const DataFormControl: FC<Props> = memo(({ row, form }) => {
                 !isValidationError && !!form.values[row.key],
             })}
           >
-            {row.placeholder}
+            {row.required ? row.placeholder.concat("*") : row.placeholder}
           </label>
         </div>
       )}
@@ -77,7 +78,7 @@ export const DataFormControl: FC<Props> = memo(({ row, form }) => {
               [styles.floating_label_valid]: !!form.values[row.key] || isTyping,
             })}
           >
-            {row.placeholder}
+            {row.required ? row.placeholder.concat("*") : row.placeholder}
           </label>
         </>
       )}
@@ -113,7 +114,7 @@ export const DataFormControl: FC<Props> = memo(({ row, form }) => {
               [styles.floating_label_valid]: !!form.values[row.key] || isTyping,
             })}
           >
-            {row.placeholder}
+            {row.required ? row.placeholder.concat("*") : row.placeholder}
           </label>
         </>
       )}
@@ -136,7 +137,7 @@ export const DataFormControl: FC<Props> = memo(({ row, form }) => {
               [styles.floating_label_valid]: form.values[row.key].length > 0,
             })}
           >
-            {row.placeholder}
+            {row.required ? row.placeholder.concat("*") : row.placeholder}
           </label>
         </div>
       )}
@@ -158,7 +159,7 @@ export const DataFormControl: FC<Props> = memo(({ row, form }) => {
               [styles.floating_label_valid]: form.values[row.key].length > 0,
             })}
           >
-            {row.placeholder}
+            {row.required ? row.placeholder.concat("*") : row.placeholder}
           </label>
         </div>
       )}
